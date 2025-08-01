@@ -135,30 +135,83 @@
  Experiments on five datasets demonstrate that RAF consistently improves fidelity and generalization across three GAN-based vocoders, validated through both objective and subjective evaluations. Comparative studies further confirm the effectiveness of our method as an adversarial training framework for neural vocoders.
 </p>
 
+<section id="raf-intro" style="font-family: Arial, sans-serif; max-width: 800px; margin: auto; line-height: 1.6;">
+  <h2>Relativistic Adversarial Feedback (RAF): Concept and Formulation</h2>
+  <p>
+    Relativistic Adversarial Feedback (RAF) is a novel training framework for 
+    GAN-based neural vocoders that improves fidelity and generalization by 
+    leveraging pretrained self-supervised learning (SSL) speech models to guide 
+    the discriminator. RAF introduces <em>relativistic pairing</em> of real and fake waveform samples 
+    to enable better modeling of the data distribution.
+  </p>
 
+  <h3>Key Components</h3>
+  <ul>
+    <li><strong>Quality Gap (Q):</strong> Measures perceptual discrepancies between real and generated waveforms using SSL embeddings and multi-resolution STFT distance.</li>
+    <li><strong>Discriminator Gap (d):</strong> Represents the relativistic difference in discriminator outputs for paired real and fake samples.</li>
+  </ul>
+
+  <h3>Mathematical Formulation</h3>
+  <p>Given ground truth waveform \( y \) and generated waveform \( G(x) \) conditioned on input \( x \), the quality gap is computed as:</p>
+  <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.2em;">
+    \[
+    Q(y, G(x)) = \left[ \alpha_W Q_W, \alpha_H Q_H, \alpha_M Q_M \right] \in \mathbb{R}^{B \times 3}
+    \]
+  </p>
+  <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.2em;">
+    where each component corresponds to SSL-based metrics (WavLM, HuBERT) and M-STFT distance, scaled by constants \(\alpha_W, \alpha_H, \alpha_M\).</p>
+
+  <p>The discriminator gap is defined as the softplus-activated difference of discriminator outputs:</p>
+  <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.2em;">
+    \[
+    d(y, G(x)) = \mathrm{softplus}\big(D(y) - D(G(x))\big) \in \mathbb{R}^{B \times 3}
+    \]
+  </p>
+
+  <p>The adversarial training objective minimizes the error between the discriminator gap and quality gap:</p>
+  <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.2em;">
+    \[
+    \mathcal{L}_{\mathrm{adv}}(D; G) = \mathbb{E}_{y,x} \Big\| d(y, G(x)) - Q(y, G(x)) \Big\|_2^2
+    \]
+  </p>
+
+  <p>The generator seeks to reduce the discriminator gap:</p>
+  <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.2em;">
+    \[
+    \mathcal{L}_{\mathrm{adv}}(G; D) = \mathbb{E}_{y,x} \big[d(y, G(x)) \big]
+    \]
+  </p>
+
+  <p>
+    Through these mechanisms, RAF encourages generators to capture the full diversity of the training data distribution, leading to enhanced synthesis quality and robustness in unseen scenarios.
+  </p>
+</section>
+
+
+	    
 	    
         <p class="section_title">Objective Results on Source Dataset (LibriTTS)</p>
 <figure class="figure">
-    <img src="/img/libritts_figure.jpg" alt="LibriTTS results figure">
+    <img src="/imgs/libritts_figure.png" alt="LibriTTS results figure">
     <figcaption><strong>Description:</strong> Objective evaluation results for LibriTTS-dev set. For models with $^\dagger$, we utilized the checkpoints from the official implementations.</figcaption>
 </figure>
 
         <p class="section_title">Subjective Results on Source Dataset (LibriTTS)</p>
 <figure class="figure">
-    <img src="/img/libritts_subjective.jpg" alt="LibriTTS results figure">
+    <img src="/imgs/libritts_subjective.png" alt="LibriTTS results figure">
     <figcaption><strong>Description:</strong> 5-scale SMOS results with 95\% Confidence Interval on LibriTTS-test and Deeply Korean dataset.</figcaption>
 </figure>
 	    
 <p class="section_title">Objective Results on Unseen Dataset</p>
 <figure class="figure">
-    <img src="/img/zeroshot.png" alt="Zero-shot generalization table">
+    <img src="/imgs/zeroshot.png" alt="Zero-shot generalization table">
     <figcaption><strong>Description:</strong> Objective evaluation results for unseen datasets, grouped by dataset and model.</figcaption>
 </figure>
 
 
 <p class="section_title">Training Objectives Comparison</p>
 <figure class="figure">
-    <img src="/img/comparative_trainingobj.png" alt="Zero-shot generalization table">
+    <img src="/imgs/comparative_trainingobj.png" alt="Zero-shot generalization table">
     <figcaption><strong>Description:</strong> A comparison result of GAN training objectives on LibriTTS-dev set. MetricGAN-RAF is a modified version of MetricGAN for RAF.</figcaption>
 </figure>
 
