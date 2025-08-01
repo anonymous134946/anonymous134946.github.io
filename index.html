@@ -130,10 +130,6 @@
             <h1>RAF: Relativistic Adversarial Feedback For Universal Speech Synthesis<!-- [<a href="" target="_blank">paper</a>]--></h1>
         </header>
         <p class="author"> <b>Anonymous Submission</b>
-        <p style="text-align: center; font-size: 32px;">[
-            <a href="" target="_blank">arXiv</a>
-            ]
-        </p>
         <p class="section_title">Abstract</p>
         <p class="abstract"> We propose Relativistic Adversarial Feedback (RAF), a novel training objective for Generative Adversarial Networks (GANs)-based vocoders that improves fidelity on the source dataset and generalization to unseen scenarios. While GAN-based vocoders benefit from advanced generator and discriminator architectures, their training objectives do not sufficiently encourage generators to learn generalizable representations and often lead to limited capturing of the training data distribution. RAF addresses this problem by leveraging speech self-supervised learning (SSL) models to assist discriminators in sample quality evaluation, encouraging the generator to learn more generalizable representations. Furthermore, we utilize relativistic pairing for real and fake waveforms to enable comprehensive modeling of the training data distribution. 
  Experiments on five datasets demonstrate that RAF consistently improves fidelity and generalization across three GAN-based vocoders, validated through both objective and subjective evaluations. Comparative studies further confirm the effectiveness of our method as an adversarial training framework for neural vocoders.
@@ -156,9 +152,9 @@
                 <p>Download audio clips of real-world experiments</p>
             </a>
         </div> -->
-        <p class="section_title">Performance Table</p>
+        <p class="section_title">LibriTTS Objective Evaluation Results</p>
         <div class="figure">
-            <img src="./img/performance_table.jpg" alt="performance_table">
+            <img src="./img/librittsfigure.png" alt="performance_table">
         </div>
 
         <p class="section_title">Speech Samples</p>
@@ -733,9 +729,7 @@
             </div>
         </details>
 
-        <footer>
-            <p>&copy; <a href="https://www.sound.kaist.ac.kr/" target="_blank">Smart Sound System Lab.</a></p>
-        </footer>
+
     </div>
 </body>
 </html>
