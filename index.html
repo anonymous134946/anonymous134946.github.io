@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transformer based declipper with temporal feature</title>
+    <title>RAF: Relativistic Adversarial Feedback For Universal Speech Synthesis</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -72,7 +72,7 @@
             padding: 10px 0 10px 0;
         }
         .sample {
-            flex: 1 1 calc(25% - 20px); /* 모든 열이 4개씩 들어가도록 설정 */
+            flex: 1 1 calc(25% - 20px); 
             box-sizing: border-box;
             padding: 5px;
             background-color: #f9f9f9;
@@ -127,16 +127,20 @@
 <body>
     <div class="container">
         <header>
-            <h1>Speech-Declipping Transformer with Complex <br> Spectrogram and Learnable Temporal Features<!-- [<a href="https://arxiv.org/pdf/2308.15777.pdf" target="_blank">paper</a>]--></h1>
+            <h1>RAF: Relativistic Adversarial Feedback For Universal Speech Synthesis<!-- [<a href="" target="_blank">paper</a>]--></h1>
         </header>
-        <p class="author"> <b>Younghoo Kwon</b> and <b>Jung-Woo Choi</b></p>
-        <p class="affiliation">School of Electrical Engineering, KAIST</p>
+        <p class="author"> <b>Anonymous Submission</b>
         <p style="text-align: center; font-size: 32px;">[
-            <a href="https://arxiv.org/abs/2409.12416" target="_blank">arXiv</a>
+            <a href="" target="_blank">arXiv</a>
             ]
         </p>
         <p class="section_title">Abstract</p>
-        <p class="abstract"> We present a transformer-based speech-declipping model that effectively recovers clipped signals across a wide range of input signal-to-distortion ratios (SDRs). While recent time-domain deep neural network (DNN)-based declippers have outperformed traditional handcrafted and spectrogram-based DNN approaches, they still struggle with low-SDR inputs. To address this, we incorporate a transformer-based architecture that operates in the time-frequency (TF) domain. The TF-transformer architecture has demonstrated remarkable performance in the speech enhancement task for low-SDR signals but cannot be optimal for the time-domain artifact like clipping. To overcome the limitations of spectrogram-based DNNs, we design an extra convolutional block that directly extracts temporal features from time-domain waveforms. The joint analysis of complex spectrogram and learned temporal features allows the model to improve performance on both high- and low-SDR inputs. Our approach also preserves the unclipped portions of the speech signal during processing, preventing degradation typically seen when only spectral information is used. In evaluations on the VoiceBank-DEMAND and DNS challenge datasets, the proposed model consistently outperformed state-of-the-art (SOTA) declipping models across various metrics, demonstrating its robustness and generalizability. </p>
+        <p class="abstract"> We propose Relativistic Adversarial Feedback (RAF), a novel training objective for Generative Adversarial Networks (GANs)-based vocoders that improves fidelity on the source dataset and generalization to unseen scenarios. While GAN-based vocoders benefit from advanced generator and discriminator architectures, their training objectives do not sufficiently encourage generators to learn generalizable representations and often lead to limited capturing of the training data distribution. RAF addresses this problem by leveraging speech self-supervised learning (SSL) models to assist discriminators in sample quality evaluation, encouraging the generator to learn more generalizable representations. Furthermore, we utilize relativistic pairing for real and fake waveforms to enable comprehensive modeling of the training data distribution. 
+ Experiments on five datasets demonstrate that RAF consistently improves fidelity and generalization across three GAN-based vocoders, validated through both objective and subjective evaluations. Comparative studies further confirm the effectiveness of our method as an adversarial training framework for neural vocoders.
+</p>
+
+
+	    
         <p class="section_title">Overall Architecture</p>
         <div class="figure">
             <img src="./img/total_arch.jpg" alt="overall_architecture">
