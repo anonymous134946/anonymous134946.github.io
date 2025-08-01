@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-    <meta charset="UTF-8">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAF: Relativistic Adversarial Feedback For Universal Speech Synthesis</title>
     <style>
@@ -126,6 +137,7 @@
     </style>
 </head>
 <body>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
     <div class="container">
         <header>
             <h1>RAF: Relativistic Adversarial Feedback For Universal Speech Synthesis<!-- [<a href="" target="_blank">paper</a>]--></h1>
@@ -149,7 +161,7 @@
         <p class="section_title">Subjective Results on Source Dataset (LibriTTS)</p>
 <figure class="figure">
     <img src="/imgs/libritts_subjective.png" alt="LibriTTS results figure">
-    <figcaption><strong> 5-scale SMOS results with 95\% Confidence Interval on LibriTTS-test and Deeply Korean dataset.</strong></figcaption>
+    <figcaption><strong> 5-scale SMOS results with 95% Confidence Interval on LibriTTS-test and Deeply Korean dataset.</strong></figcaption>
 </figure>
 	    
 <p class="section_title">Objective Results on Unseen Datasets</p>
@@ -169,574 +181,187 @@
         <p class="section_title">Speech Samples</p>
         <p class="section_exp">Click a toggle to listen to samples</p>
 
-        <details>
-            <summary class="dataset-name">VBDM dataset: 1 dB SDR input (p223_007)</summary>
-            <!-- The first data -->
-            <div class="content">
-                <!-- <div class="data_exp">VBDM dataset: 1 dB SDR input (p223_007)</div> -->
-                <div class="sample">
-                    <div class="data_title">1 dB SDR clipped speech</div>
-                    <img src="./img/vbdm/p232_007_1dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/vbdm/p232_007_1dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/vbdm/p232_007_1dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/vbdm/p232_007_1dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/vbdm/p232_007_1dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/vbdm/p232_007_1dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/vbdm/p232_007_1dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/vbdm/p232_007_1dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_1dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
+<details>
+    <summary class="dataset-name">VBDM dataset: 1 dB SDR input (p223_007)</summary>
+    <div class="content">
+        <div class="sample">
+            <div class="data_title">1 dB SDR clipped speech</div>
+            <img src="./img/vbdm/p232_007_1dB/clipped.png" alt="Clipped Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/clipped.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Target Speech</div>
+            <img src="./img/vbdm/p232_007_1dB/target.png" alt="Target Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/target.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Proposed method</div>
+            <img src="./img/vbdm/p232_007_1dB/proposed.png" alt="Proposed Method">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/proposed.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">DeFTAN-II</div>
+            <img src="./img/vbdm/p232_007_1dB/deftan2.png" alt="deftan2">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/deftan2.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">A-SPADE</div>
+            <img src="./img/vbdm/p232_007_1dB/aspade.png" alt="aspade">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/aspade.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</details>
 
         <details>
-            <summary class="dataset-name">VBDM dataset: 3 dB SDR input (p223_007)</summary>
-            <!-- The second data -->
-            <div class="content">
-                <div class="sample">
-                    <div class="data_title">3 dB SDR clipped speech</div>
-                    <img src="./img/vbdm/p232_007_3dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/vbdm/p232_007_3dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/vbdm/p232_007_3dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/vbdm/p232_007_3dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/vbdm/p232_007_3dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/vbdm/p232_007_3dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/vbdm/p232_007_3dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/vbdm/p232_007_3dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_3dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary class="dataset-name">VBDM dataset: 7 dB SDR input (p223_007)</summary>
-            <div class="content">
-                <!-- The third data -->
-                <div class="sample">
-                    <div class="data_title">7 dB SDR clipped speech</div>
-                    <img src="./img/vbdm/p232_007_7dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/vbdm/p232_007_7dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/vbdm/p232_007_7dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/vbdm/p232_007_7dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/vbdm/p232_007_7dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/vbdm/p232_007_7dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/vbdm/p232_007_7dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/vbdm/p232_007_7dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_7dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary class="dataset-name">VBDM dataset: 15 dB SDR input (p223_007)</summary>
-            <div class="content">
-                <!-- The third data -->
-                <div class="sample">
-                    <div class="data_title">15 dB SDR clipped speech</div>
-                    <img src="./img/vbdm/p232_007_15dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/vbdm/p232_007_15dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/vbdm/p232_007_15dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/vbdm/p232_007_15dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/vbdm/p232_007_15dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/vbdm/p232_007_15dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/vbdm/p232_007_15dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/vbdm/p232_007_15dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/vbdm/p232_007_15dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary class="dataset-name">DNS dataset: 1 dB SDR input (fileid_2)</summary>
-            <div class="content">
-                <!-- The third data -->
-                <div class="sample">
-                    <div class="data_title">1 dB SDR clipped speech</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/dns/clean_fileid_2_1dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_1dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary class="dataset-name">DNS dataset: 3 dB SDR input (fileid_2)</summary>
-            <div class="content">
-                <!-- The third data -->
-                <div class="sample">
-                    <div class="data_title">3 dB SDR clipped speech</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/dns/clean_fileid_2_3dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_3dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary class="dataset-name">DNS dataset: 7 dB SDR input (fileid_2)</summary>
-            <div class="content">
-                <!-- The third data -->
-                <div class="sample">
-                    <div class="data_title">7 dB SDR clipped speech</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/dns/clean_fileid_2_7dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_7dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary class="dataset-name">DNS dataset: 15 dB SDR input (fileid_2)</summary>
-            <div class="content">
-                <!-- The third data -->
-                <div class="sample">
-                    <div class="data_title">15 dB SDR clipped speech</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/clipped.png" alt="Clipped Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/clipped.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Target Speech</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/target.png" alt="Target Spectrogram">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/target.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">Proposed method</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/proposed.png" alt="Proposed Method">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/proposed.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DeFTAN-II</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/deftan2.png" alt="deftan2">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/deftan2.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">A-SPADE</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/aspade.png" alt="aspade">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/aspade.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">T-UNet</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/tunet.png" alt="tunet">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/tunet.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DD</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/dd.png" alt="dd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/dd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="sample">
-                    <div class="data_title">DDD</div>
-                    <img src="./img/dns/clean_fileid_2_15dB/ddd.png" alt="ddd">
-                    <audio controls>
-                        <source src="./wav/dns/clean_fileid_2_15dB/ddd.wav" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-        </details>
+    <summary class="dataset-name">VBDM dataset: 1 dB SDR input (p223_007)</summary>
+    <div class="content">
+        <div class="sample">
+            <div class="data_title">1 dB SDR clipped speech</div>
+            <img src="./img/vbdm/p232_007_1dB/clipped.png" alt="Clipped Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/clipped.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Target Speech</div>
+            <img src="./img/vbdm/p232_007_1dB/target.png" alt="Target Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/target.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Proposed method</div>
+            <img src="./img/vbdm/p232_007_1dB/proposed.png" alt="Proposed Method">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/proposed.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">DeFTAN-II</div>
+            <img src="./img/vbdm/p232_007_1dB/deftan2.png" alt="deftan2">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/deftan2.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">A-SPADE</div>
+            <img src="./img/vbdm/p232_007_1dB/aspade.png" alt="aspade">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/aspade.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</details>
+	    <details>
+    <summary class="dataset-name">VBDM dataset: 1 dB SDR input (p223_007)</summary>
+    <div class="content">
+        <div class="sample">
+            <div class="data_title">1 dB SDR clipped speech</div>
+            <img src="./img/vbdm/p232_007_1dB/clipped.png" alt="Clipped Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/clipped.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Target Speech</div>
+            <img src="./img/vbdm/p232_007_1dB/target.png" alt="Target Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/target.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Proposed method</div>
+            <img src="./img/vbdm/p232_007_1dB/proposed.png" alt="Proposed Method">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/proposed.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">DeFTAN-II</div>
+            <img src="./img/vbdm/p232_007_1dB/deftan2.png" alt="deftan2">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/deftan2.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">A-SPADE</div>
+            <img src="./img/vbdm/p232_007_1dB/aspade.png" alt="aspade">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/aspade.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</details>
+	    <details>
+    <summary class="dataset-name">VBDM dataset: 1 dB SDR input (p223_007)</summary>
+    <div class="content">
+        <div class="sample">
+            <div class="data_title">1 dB SDR clipped speech</div>
+            <img src="./img/vbdm/p232_007_1dB/clipped.png" alt="Clipped Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/clipped.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Target Speech</div>
+            <img src="./img/vbdm/p232_007_1dB/target.png" alt="Target Spectrogram">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/target.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">Proposed method</div>
+            <img src="./img/vbdm/p232_007_1dB/proposed.png" alt="Proposed Method">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/proposed.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">DeFTAN-II</div>
+            <img src="./img/vbdm/p232_007_1dB/deftan2.png" alt="deftan2">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/deftan2.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="sample">
+            <div class="data_title">A-SPADE</div>
+            <img src="./img/vbdm/p232_007_1dB/aspade.png" alt="aspade">
+            <audio controls>
+                <source src="./wav/vbdm/p232_007_1dB/aspade.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</details>
 
 
     </div>
